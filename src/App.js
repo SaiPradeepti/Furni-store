@@ -3,12 +3,17 @@ import Furniture from './Furniture'
 
 function App() {  
   return (
-    <div className="App bg-blue-500 grid grid-cols-3 gap-4">
+    <div className="main">
+      <header>
+        <div className="title">Furni Store</div>
+      </header>
+      <div className="container">
       {
         furnitureList.map(item => {
           return <Furniture key={item.id} {...item} />
         })
       }
+    </div>
     </div>
   );
 }

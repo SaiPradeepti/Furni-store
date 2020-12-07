@@ -1,10 +1,12 @@
 const Furniture = ({title, image, price}) => {
     return (
         <>
-            <div>
+            <div className="item">
                 <h4>{title}</h4>
-                <img src={image} alt={title} />
-                <p>$ {price}</p>
+                <button>$ {price}</button>
+                <div>
+                    <img src={image} alt={title} />
+                </div>
             </div>
         </>
     );
