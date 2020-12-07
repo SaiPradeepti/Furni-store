@@ -1,7 +1,33 @@
 import furnitureList from './furnitureList'
 import Furniture from './Furniture'
+import {useState} from 'react'
 
-function App() {  
+function App() {
+  const [loading,setLoading] = useState(true);
+
+  const loadingTime = () => {
+    setTimeout(() => {
+            setLoading(false);
+          },3000);
+  }
+
+  if(loading){
+    return (
+      <div className="mainLoading">
+        <div className="loading">
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+        </div>    
+        {
+          loadingTime()
+        }
+      </div>
+    );
+  }
+
   return (
     <div className="main">
       <header>

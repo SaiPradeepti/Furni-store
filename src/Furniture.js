@@ -6,7 +6,7 @@ const Furniture = ({title, image, price}) => {
                     <h4>{title}</h4>
                     <div className="underline"></div>              
                 </div>
-                <button>$ {price}</button>
+                <div className="price" onClick={() => alert(`Item ${title.toUpperCase()} Added`)}> <strong> $ {price} </strong>| Add Item</div>
                 <div>
                     <img src={image} alt={title} />
                 </div>
