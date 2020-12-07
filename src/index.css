@@ -63,10 +63,28 @@ code {
 
 .item h4 {
   font-family: 'Nunito', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3em;
   text-transform: capitalize;
   letter-spacing: 0.12em;
   text-align: center;
+}
+
+.item-title {
+  position: relative;
+}
+
+.underline {
+  top: 80%;
+  position: absolute;
+  height: 4px;
+  width: 0%;
+  background: black;
+  transition: all 0.5s;
+  transform: translateX(50px);
+}
+
+.item:hover .underline {
+  width: 50%;
 }
 
 .item button {
