@@ -1,9 +1,11 @@
 import furnitureList from './furnitureList'
 import Furniture from './Furniture'
+import Form from './Form'
 import {useState} from 'react'
 
+
 function App() {
-  const [loading,setLoading] = useState(true);
+  const [loading,setLoading] = useState(false);
 
   const loadingTime = () => {
     setTimeout(() => {
@@ -29,18 +31,21 @@ function App() {
   }
 
   return (
-    <div className="main">
-      <header>
-        <div className="title">Furni Store</div>
-      </header>
-      <div className="container">
-      {
-        furnitureList.map(item => {
-          return <Furniture key={item.id} {...item} />
-        })
-      }
-    </div>
-    </div>
+    <>
+      <div className="main">
+        <header>
+          <div className="title">Furni Store</div>
+        </header>
+        <div className="container">
+          {
+            furnitureList.map(item => {
+              return <Furniture key={item.id} {...item} />
+            })
+          }
+        </div>    
+      </div>
+      <Form />
+    </>
   );
 }
 
