@@ -173,3 +173,32 @@ a span:nth-child(4) {
     bottom: 100%;
   }
 }
+
+.questions {
+  width: 50vw;
+  margin: 5em auto;
+  box-shadow: 1px 0px 15px 0px rgba(46, 50, 50, 0.38);
+  background: rgb(255, 240, 246);
+  border-radius: 20px;
+  color: #222;
+  padding: 40px 70px;
+}
+
+.queryInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.queryInfo > * {
+  box-shadow: 1px 0px 15px 0px rgba(46, 50, 50, 0.18);
+}
+
+.queryInfo-name {
+  flex-grow: 1;
+}
+
+.queryInfo-question {
+  flex-grow: 3;
+}

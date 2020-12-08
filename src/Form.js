@@ -27,31 +27,46 @@ const Form = () => {
     }
 
     return (
-        <article>            
-            <form className="form">
-                <h4>Any Questions</h4>
-                <div className="form-control">
-                    <input type="text" id="name" name="name" value={userQueryInfo.name} onChange={handleChange} />
-                    <label htmlFor="name">Name </label>                    
-                </div>
-                <div className="form-control">
-                    <input type="text" id="email" name="email" value={userQueryInfo.email} onChange={handleChange} />
-                    <label htmlFor="email">Email </label>
-                </div>
-                <div className="form-control">
-                    {/* <textarea name="query" id="query" cols="30" rows="1" placeholder="..." value={userQueryInfo.query} onChange={(e) => setQuery(e.target.value)}></textarea> */}
-                    <input name="query" id="query" cols="30" rows="1" value={userQueryInfo.query} onChange={handleChange}/>
-                    <label htmlFor="name">Enter your question: </label>
-                </div>
-                <a href="#" onClick={handleSubmit}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
-                </a>
-            </form>
-        </article>
+        <>
+            <article>            
+                <form className="form">
+                    <h4>Any Questions</h4>
+                    <div className="form-control">
+                        <input type="text" id="name" name="name" value={userQueryInfo.name} onChange={handleChange} />
+                        <label htmlFor="name">Name </label>                    
+                    </div>
+                    <div className="form-control">
+                        <input type="text" id="email" name="email" value={userQueryInfo.email} onChange={handleChange} />
+                        <label htmlFor="email">Email </label>
+                    </div>
+                    <div className="form-control">
+                        {/* <textarea name="query" id="query" cols="30" rows="1" placeholder="..." value={userQueryInfo.query} onChange={(e) => setQuery(e.target.value)}></textarea> */}
+                        <input name="query" id="query" cols="30" rows="1" value={userQueryInfo.query} onChange={handleChange}/>
+                        <label htmlFor="name">Enter your question: </label>
+                    </div>
+                    <a href="#" onClick={handleSubmit}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Submit
+                    </a>
+                </form>            
+            </article>
+            <div className="questions">
+                {
+                    queryList.map((userQuery) => {
+                        const {id,name,query} = userQuery;
+                        return (
+                            <div className="queryInfo" key={id}>
+                                <p className="queryInfo-name"><strong>Name</strong>: {name}</p>
+                                <p className="queryInfo-question"><strong>Question</strong>: {query}</p>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </>
     )
 };
 
